@@ -233,7 +233,10 @@ p{max-width:62ch;font-size:clamp(15px,1.35vw,19px);color:var(--ink-soft)}
 @media (max-width:820px){.qs{grid-template-columns:1fr}}
 /* ---------- mobile ---------- */
 @media (max-width:640px){
-  .slide{padding:18px 20px 104px;gap:14px}
+  .slide{padding:18px 20px 0;gap:14px}
+  /* spacer instead of padding-bottom: some mobile browsers drop the end padding of a scrolling flex column, leaving the last block under the nav */
+  .slide::after{content:"";display:block;flex:0 0 calc(96px + env(safe-area-inset-bottom))}
+  .body{flex:1 0 auto}
   .body{justify-content:flex-start;gap:18px}
   .cover .body{justify-content:flex-end}
   .cover .bar .pg{display:none}
