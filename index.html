@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es" class="locked">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta web · Grupo Arvor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0c2350; --navy-2:#143a78; --navy-line:rgba(255,255,255,.16);
+  --sky:#6cc0f5; --sky-ink:#1777b8;
+  --paper:#f2f5f8; --paper-2:#e4ebf2; --line:#cfd9e4;
+  --ink:#0f2240; --ink-soft:#44546b; --ink-mute:#7d8b9d;
+  --urgent:#c8321f; --mid:#b86a10; --low:#2c7a4b;
+  --font:'Archivo', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --logo:url("data:image/png;base64,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");
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0f1a2b; --paper-2:#172539; --line:#26374f;
+    --ink:#eef3f8; --ink-soft:#b7c3d3; --ink-mute:#8494a8; --sky-ink:#6cc0f5;
+    --urgent:#ff7a66; --mid:#f0a647; --low:#5fcf8d;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0f1a2b; --paper-2:#172539; --line:#26374f;
+  --ink:#eef3f8; --ink-soft:#b7c3d3; --ink-mute:#8494a8; --sky-ink:#6cc0f5;
+  --urgent:#ff7a66; --mid:#f0a647; --low:#5fcf8d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--font);background:var(--paper);color:var(--ink);line-height:1.5;overflow:hidden;-webkit-font-smoothing:antialiased}
+
+/* ---------- slide frame ---------- */
+.slide{position:absolute;inset:0;display:none;flex-direction:column;gap:clamp(12px,2vh,26px);
+  padding:clamp(22px,4.5vh,52px) clamp(22px,6.5vw,104px) clamp(70px,10vh,96px);overflow-y:auto;background:var(--paper)}
+.slide.active{display:flex}
+.slide.dark{background:var(--navy);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:block;background:currentColor;-webkit-mask:var(--logo) no-repeat left center/contain;mask:var(--logo) no-repeat left center/contain;aspect-ratio:242/91}
+.bar .logo{width:clamp(74px,7vw,100px);color:var(--ink)}
+.dark .bar .logo{color:#fff}
+.bar .pg{font-size:13px;font-weight:500;color:var(--ink-mute);font-variant-numeric:tabular-nums}
+.dark .bar .pg{color:#9fb3d6}
+
+.kicker{font-size:clamp(14px,1.3vw,17px);font-weight:600;color:var(--sky-ink);margin-bottom:10px}
+.dark .kicker{color:var(--sky)}
+h1,h2,h3,.display{font-stretch:118%}
+h1{font-size:clamp(36px,5.6vw,84px);font-weight:800;line-height:.98;letter-spacing:-.025em;max-width:16ch}
+h2{font-size:clamp(26px,3.5vw,50px);font-weight:750;line-height:1.04;letter-spacing:-.02em;max-width:24ch}
+h3{font-size:clamp(16px,1.45vw,20px);font-weight:700;line-height:1.2;margin-bottom:8px;letter-spacing:-.005em}
+p{max-width:62ch;font-size:clamp(15px,1.35vw,19px);color:var(--ink-soft)}
+.dark p{color:#c9d6ee}
+.lead{font-size:clamp(18px,1.8vw,25px);line-height:1.4;max-width:46ch}
+.note{font-size:clamp(13px,1.1vw,15px);color:var(--ink-mute);max-width:none}
+.dark .note{color:#9fb3d6}
+.body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(14px,2.4vh,28px)}
+
+/* ---------- cover ---------- */
+.cover .logo{width:clamp(180px,20vw,280px);color:#fff}
+.cover .body{justify-content:flex-end}
+.cover h1{margin-top:clamp(20px,5vh,56px)}
+.horizon{position:relative;margin-top:clamp(20px,4vh,44px);padding-top:26px}
+.horizon::before{content:"";position:absolute;left:0;right:0;top:32px;height:2px;background:linear-gradient(90deg,var(--sky),rgba(108,192,245,.25));transform-origin:left}
+.horizon ol{list-style:none;display:grid;grid-template-columns:repeat(8,1fr);gap:8px;position:relative}
+.horizon li{font-size:clamp(11px,1vw,14px);font-weight:600;color:#c9d6ee;padding-top:22px;position:relative;line-height:1.25}
+.horizon li::before{content:"";position:absolute;top:0;left:0;width:14px;height:14px;border-radius:50%;background:var(--navy);border:2px solid var(--sky)}
+.horizon li:nth-child(-n+3)::before{background:var(--sky)}
+.cover-foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:14px;color:#9fb3d6;padding-top:18px;border-top:1px solid var(--navy-line)}
+@media (max-width:760px){.horizon ol{grid-template-columns:repeat(4,1fr);row-gap:18px}.horizon::before{display:none}}
+@media (prefers-reduced-motion:no-preference){
+  .cover.active .horizon::before{animation:draw 1.1s .2s cubic-bezier(.6,.1,.2,1) both}
+  .cover.active .horizon li{animation:pop .4s both}
+  .cover.active .horizon li:nth-child(1){animation-delay:.35s}.cover.active .horizon li:nth-child(2){animation-delay:.45s}
+  .cover.active .horizon li:nth-child(3){animation-delay:.55s}.cover.active .horizon li:nth-child(4){animation-delay:.65s}
+  .cover.active .horizon li:nth-child(5){animation-delay:.75s}.cover.active .horizon li:nth-child(6){animation-delay:.85s}
+  .cover.active .horizon li:nth-child(7){animation-delay:.95s}.cover.active .horizon li:nth-child(8){animation-delay:1.05s}
+  @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .slide.active:not(.cover) .body{animation:fade .3s ease both}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+}
+
+/* ---------- statement slides ---------- */
+.statement .body{max-width:1100px}
+.statement h1{max-width:18ch}
+.quote{font-size:clamp(28px,3.8vw,54px);font-weight:700;font-stretch:112%;line-height:1.08;letter-spacing:-.02em;color:#fff;max-width:22ch;padding-left:clamp(16px,2vw,28px);border-left:4px solid var(--sky)}
+
+/* ---------- grids ---------- */
+.cols{display:grid;gap:clamp(18px,2.6vw,44px)}
+.c2{grid-template-columns:repeat(2,1fr)} .c3{grid-template-columns:repeat(3,1fr)} .c4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:820px){.c2,.c3,.c4{grid-template-columns:1fr}}
+.item h3{padding-top:14px;border-top:2px solid var(--ink)}
+.dark .item h3{border-color:var(--sky)}
+.item p{font-size:clamp(14px,1.2vw,17px)}
+
+/* needs slide: big numbers are real (3 needs) */
+.need{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:baseline}
+.need .k{grid-row:span 2;font-size:clamp(40px,4.6vw,68px);font-weight:800;font-stretch:125%;line-height:.9;color:var(--sky-ink)}
+
+/* ---------- table ---------- */
+.tblwrap{overflow-x:auto;border-top:2px solid var(--ink)}
+.tbl{width:100%;border-collapse:collapse;font-size:clamp(13px,1.15vw,16px);min-width:640px}
+.tbl th{text-align:left;font-weight:600;color:var(--ink-mute);padding:10px 16px 10px 0;border-bottom:1px solid var(--line);font-size:.88em}
+.tbl td{padding:9px 16px 9px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-soft)}
+.tbl td:first-child{font-weight:700;color:var(--ink);white-space:nowrap}
+.pri{display:inline-flex;align-items:center;gap:8px;font-weight:600;white-space:nowrap}
+.pri::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.pri.u{color:var(--urgent)} .pri.m{color:var(--mid)} .pri.b{color:var(--low)}
+
+.aud{display:inline-flex;align-items:center;gap:6px;margin-left:10px;font-size:.78em;font-weight:600;color:var(--sky-ink);border:1px solid currentColor;border-radius:999px;padding:1px 9px;white-space:nowrap}
+.aud::before{content:"";width:7px;height:8px;border:1.5px solid currentColor;border-radius:1px 1px 3px 3px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center}
+.brandmode{display:grid;grid-template-columns:minmax(220px,.8fr) 1.6fr;gap:clamp(16px,2.6vw,40px);padding:clamp(16px,2vw,26px);border-radius:16px;background:var(--navy);color:#fff}
+.brandmode h3{color:#fff}
+.brandmode p{color:#c9d6ee;font-size:clamp(14px,1.2vw,16px)}
+.locks{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;list-style:none}
+.locks li{font-size:clamp(13px,1.1vw,15px);color:#dfe8f7;padding:8px 0;border-top:1px solid var(--navy-line)}
+.locks b{color:var(--sky);font-weight:600;margin-right:6px}
+@media (max-width:820px){.brandmode,.locks{grid-template-columns:1fr}}
+.stage{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--ink)}
+.stage div{padding:10px 16px 0 0;border-right:1px solid var(--line);margin-right:16px}
+.stage div:last-child{border-right:none}
+.stage .who{font-size:12px;font-weight:600;color:var(--ink-mute)}
+.stage div.ext .who{color:var(--sky-ink)}
+.stage p{font-size:clamp(13px,1.1vw,15px)}
+@media (max-width:820px){.stage{grid-template-columns:1fr 1fr;row-gap:12px}}
+
+/* ---------- architecture ---------- */
+.arch{display:grid;grid-template-columns:1fr 36px 1fr 36px 1.35fr;align-items:stretch}
+.node{border-radius:16px;padding:clamp(16px,2vw,26px);background:var(--paper-2);display:flex;flex-direction:column;gap:6px}
+.node.studio{background:var(--navy);color:#fff}
+.node.studio p{color:#c9d6ee}
+.node .sub{font-size:clamp(13px,1.1vw,15px);margin-bottom:8px}
+.node ul{list-style:none;font-size:clamp(13px,1.1vw,15px);color:var(--ink-soft)}
+.node.studio ul{color:#dfe8f7}
+.node li{padding:7px 0;border-top:1px solid var(--line)}
+.node.studio li{border-color:var(--navy-line)}
+.link{position:relative;align-self:center;height:2px;background:var(--sky-ink)}
+.link::after{content:"";position:absolute;right:-1px;top:-5px;border:6px solid transparent;border-left:8px solid var(--sky-ink);border-right:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:clamp(12px,1vw,14px);font-weight:600;padding:6px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
+@media (max-width:820px){.arch{grid-template-columns:1fr;gap:0}.link{width:2px;height:28px;justify-self:center}.link::after{right:-5px;top:auto;bottom:-1px;border:6px solid transparent;border-top:8px solid var(--sky-ink);border-bottom:0}}
+
+/* ---------- timeline ---------- */
+.track{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.8vw,26px);position:relative}
+.track::before{content:"";position:absolute;left:0;right:0;top:22px;height:2px;background:var(--line)}
+.step{position:relative}
+.step .n{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:18px;background:var(--paper);border:2px solid var(--line);color:var(--ink);margin-bottom:16px;position:relative}
+.step.s1 .n{background:var(--navy);border-color:var(--navy);color:#fff}
+.step.s2 .n{background:var(--sky-ink);border-color:var(--sky-ink);color:#fff}
+.step.s3 .n{background:var(--sky);border-color:var(--sky);color:var(--navy)}
+.step.s4 .n,.step.s5 .n{background:var(--paper);border:2px dashed var(--sky-ink);color:var(--sky-ink)}
+.step p{font-size:clamp(13px,1.1vw,16px)}
+.step .opt{display:inline-block;font-size:12px;font-weight:600;color:var(--ink-mute);margin-bottom:6px}
+@media (max-width:820px){.track{grid-template-columns:1fr}.track::before{display:none}.step{display:grid;grid-template-columns:46px 1fr;gap:0 16px}.step .n{grid-row:span 3;margin:0}}
+.callout{display:flex;gap:14px;align-items:flex-start;padding:14px 18px;border-radius:12px;background:var(--paper-2);max-width:880px}
+.callout::before{content:"";flex:0 0 4px;align-self:stretch;border-radius:2px;background:var(--sky-ink)}
+.callout p{font-size:clamp(14px,1.2vw,16px);max-width:none}
+
+/* ---------- lists ---------- */
+.checks{list-style:none}
+.checks li{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:clamp(15px,1.3vw,18px);color:var(--ink-soft)}
+.checks li::before{content:"";flex:0 0 18px;height:10px;margin-top:.35em;border-left:2px solid var(--sky-ink);border-bottom:2px solid var(--sky-ink);transform:rotate(-45deg)}
+.dark .checks li{border-color:var(--navy-line);color:#dfe8f7}
+.dark .checks li::before{border-color:var(--sky)}
+.steps-list{list-style:none;counter-reset:s;max-width:820px}
+.steps-list li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--navy-line);font-size:clamp(15px,1.35vw,19px);color:#dfe8f7}
+.steps-list li::before{content:counter(s);font-weight:800;font-stretch:125%;font-size:1.3em;color:var(--sky)}
+
+/* ---------- pricing ---------- */
+.price{padding:20px;border-radius:14px;background:var(--paper-2);display:flex;flex-direction:column;gap:6px}
+.price.main{background:var(--navy);color:#fff}
+.price .lbl{font-size:13px;font-weight:600;color:var(--ink-mute)}
+.price.main .lbl{color:var(--sky)}
+.price .amt{font-size:clamp(24px,2.6vw,36px);font-weight:800;font-stretch:115%;letter-spacing:-.02em}
+.price p{font-size:clamp(13px,1.1vw,15px)}
+.price.main p{color:#c9d6ee}
+
+.price .ars{font-size:13px;color:var(--ink-mute);margin-top:auto;padding-top:6px}
+.price.main .ars{color:#9fb3d6}
+.pay{display:grid;grid-template-columns:4fr 6fr;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.seg{display:flex;gap:16px;align-items:center;padding:14px 18px}
+.seg.s30{background:var(--sky-ink);color:#fff}
+.seg.s30 p,.seg.s30 h3{color:#fff}
+.seg.s70{background:var(--paper-2)}
+.seg h3{margin:0 0 2px}
+.seg p{font-size:clamp(13px,1.05vw,15px)}
+.pct{font-size:clamp(28px,3vw,42px);font-weight:800;font-stretch:125%;line-height:1}
+@media (max-width:820px){.pay{grid-template-columns:1fr}}
+.tech{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,32px)}
+.tcol{display:flex;flex-direction:column;gap:6px;padding-top:10px;border-top:2px solid var(--ink)}
+.tcol .role{font-size:13px;font-weight:600;color:var(--sky-ink)}
+.tcol h3{font-size:clamp(20px,2vw,28px);margin:0}
+.tcol p{font-size:clamp(14px,1.15vw,16px)}
+.who-uses{font-size:12px;font-weight:600;color:var(--ink-mute);margin-top:4px}
+.brands{display:flex;flex-wrap:wrap;gap:6px}
+.brands span{font-size:clamp(12px,1vw,14px);font-weight:700;padding:5px 10px;border-radius:6px;background:var(--paper-2);color:var(--ink)}
+.case{margin-top:6px;padding:12px 14px;border-radius:12px;background:var(--navy);color:#fff;display:flex;flex-direction:column;gap:4px}
+.case .big{font-size:clamp(20px,2vw,28px);font-weight:800;font-stretch:120%;color:var(--sky);white-space:nowrap}
+.case p{color:#c9d6ee;font-size:13px}
+@media (max-width:820px){.tech{grid-template-columns:1fr}}
+.guarantee{display:flex;gap:clamp(16px,2.4vw,32px);align-items:center;padding:clamp(14px,1.8vw,22px) clamp(16px,2.2vw,28px);border-radius:16px;background:var(--navy);color:#fff}
+.guarantee h3{color:#fff}
+.guarantee p{color:#c9d6ee;font-size:clamp(14px,1.15vw,16px);max-width:80ch}
+.score{flex:0 0 auto;width:clamp(64px,6vw,84px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--sky) 0 92%,rgba(255,255,255,.15) 92% 100%)}
+.score span{width:78%;aspect-ratio:1;border-radius:50%;background:var(--navy);display:grid;place-items:center;font-weight:800;font-stretch:120%;font-size:clamp(18px,1.8vw,24px);color:var(--sky)}
+.auto{display:grid;grid-template-columns:auto 1fr;gap:clamp(12px,2vw,28px);align-items:center;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.auto-lbl{font-size:13px;font-weight:600;color:var(--sky-ink);white-space:nowrap}
+.auto-list{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,28px)}
+.auto-list div{display:flex;flex-direction:column;gap:2px}
+.auto-list b{font-size:clamp(16px,1.5vw,21px);font-weight:800;font-stretch:115%}
+.auto-list span{font-size:clamp(12px,1vw,14px);color:var(--ink-soft);line-height:1.35}
+@media (max-width:820px){.auto,.auto-list{grid-template-columns:1fr}}
+.vs{display:grid;grid-template-columns:1fr 1fr;border-radius:16px;overflow:hidden}
+.vs>div{padding:clamp(14px,1.8vw,22px) clamp(16px,2.2vw,28px)}
+.vs .before{background:rgba(255,255,255,.06)}
+.vs .after{background:var(--navy-2)}
+.vs h3{color:#fff;margin-bottom:10px}
+.vs .before h3{color:#9fb3d6}
+.vs ul{list-style:none}
+.vs li{padding:7px 0;border-top:1px solid var(--navy-line);font-size:clamp(14px,1.2vw,17px);color:#c9d6ee}
+.vs .after li{color:#fff}
+.vs .after li::before{content:"";display:inline-block;width:12px;height:6px;margin:0 10px 3px 0;border-left:2px solid var(--sky);border-bottom:2px solid var(--sky);transform:rotate(-45deg)}
+.vs .before li::before{content:"";display:inline-block;width:10px;height:2px;margin:0 12px 4px 0;background:#9fb3d6}
+@media (max-width:820px){.vs{grid-template-columns:1fr}}
+.qs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.8vw,24px)}
+.q{padding:clamp(14px,1.8vw,22px);border-radius:14px;background:var(--paper-2);display:flex;flex-direction:column;gap:8px}
+.q .ask{font-size:clamp(17px,1.6vw,22px);font-weight:700;font-stretch:110%;line-height:1.2;color:var(--ink)}
+.q p{font-size:clamp(13px,1.1vw,15px)}
+@media (max-width:820px){.qs{grid-template-columns:1fr}}
+/* ---------- mobile ---------- */
+@media (max-width:640px){
+  .slide{padding:18px 20px 104px;gap:14px}
+  .body{justify-content:flex-start;gap:18px}
+  .cover .body{justify-content:flex-end}
+  .cover .bar .pg{display:none}
+  h1{font-size:clamp(32px,9.5vw,44px)}
+  h2{font-size:clamp(24px,7vw,32px)}
+  .statement h1{font-size:clamp(36px,11vw,48px)}
+  .lead{font-size:17px}
+  .quote{font-size:clamp(24px,7.2vw,32px)}
+  .cover-foot{flex-direction:column;font-size:13px}
+  .tblwrap{border-top:none;overflow:visible}
+  .tbl{min-width:0}
+  .tbl thead{display:none}
+  .tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
+  .tbl tr{padding:12px 14px;margin-bottom:10px;border-radius:12px;background:var(--paper-2)}
+  .tbl td{border:none;padding:3px 0;font-size:14px}
+  .tbl td:first-child{white-space:normal;font-size:17px;padding-bottom:6px}
+  .tbl td:not(:first-child)::before{content:attr(data-label);display:block;font-size:11px;font-weight:600;color:var(--ink-mute);margin-top:4px}
+  .stage{grid-template-columns:1fr;border-top:none}
+  .stage div{margin:0;padding:10px 0;border-right:none;border-top:1px solid var(--line)}
+  .guarantee{flex-direction:column;align-items:flex-start;gap:12px}
+  .need .k{font-size:40px}
+  .price .amt{font-size:28px}
+  .pay .seg{padding:14px 16px}
+  .vs li{font-size:14px}
+  .nav{padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .nav.on-dark{background:color-mix(in srgb,var(--navy) 88%,transparent);border-top-color:var(--navy-line)}
+  .progress{max-width:none}
+  .btn{width:44px;height:44px}
+}
+/* ---------- nav ---------- */
+.nav{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(22px,6.5vw,104px);pointer-events:none;z-index:5}
+.nav>*{pointer-events:auto}
+.progress{flex:1;max-width:340px;height:4px;border-radius:2px;background:rgba(127,140,160,.25);overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:var(--sky-ink);transition:width .3s}
+.btns{display:flex;gap:8px}
+.btn{font:inherit;font-weight:600;font-size:15px;width:42px;height:42px;border-radius:50%;cursor:pointer;background:var(--paper-2);color:var(--ink);border:1px solid var(--line)}
+.btn:disabled{opacity:.35;cursor:default}
+.on-dark .btn{background:rgba(255,255,255,.1);color:#fff;border-color:var(--navy-line)}
+.on-dark .progress i{background:var(--sky)}
+.btn:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+
+/* ---------- pin gate ---------- */
+html.locked body>*:not(#gate){visibility:hidden}
+#gate{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px;background:var(--navy);color:#fff}
+html.locked #gate{display:flex}
+.gate-card{width:100%;max-width:360px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
+.gate-card .logo{width:180px;color:#fff;margin-bottom:8px}
+.gate-card h2{font-size:clamp(24px,5vw,32px);color:#fff;max-width:none}
+.gate-card p{font-size:15px;color:#c9d6ee;max-width:32ch}
+.pin{display:flex;gap:12px;margin-top:6px}
+.pin input{width:56px;height:64px;text-align:center;font:inherit;font-size:28px;font-weight:700;color:#fff;background:rgba(255,255,255,.08);border:1px solid var(--navy-line);border-radius:12px;caret-color:var(--sky);-webkit-text-security:disc}
+.pin input:focus{outline:2px solid var(--sky);outline-offset:2px;border-color:transparent}
+.pin.err input{border-color:#ff7a66}
+.pin.err{animation:shake .4s}
+.gate-msg{min-height:20px;font-size:14px;color:#ff9a8a}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+@media (prefers-reduced-motion:reduce){.pin.err{animation:none}}
+</style>
+<script>try{if(sessionStorage.getItem('arvor-ok')==='1')document.documentElement.classList.remove('locked')}catch(e){}</script>
+</head>
+<body>
+
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-t">
+  <form class="gate-card" id="gate-form" autocomplete="off">
+    <span class="logo" role="img" aria-label="Grupo Arvor"></span>
+    <h2 id="gate-t">Documento privado</h2>
+    <p>Ingresá el PIN de 4 dígitos para ver la propuesta.</p>
+    <div class="pin" id="pin">
+      <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" aria-label="Dígito 1">
+      <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" aria-label="Dígito 2">
+      <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" aria-label="Dígito 3">
+      <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" aria-label="Dígito 4">
+    </div>
+    <div class="gate-msg" id="gate-msg" role="alert"></div>
+  </form>
+</div>
+
+<!-- 1 -->
+<section class="slide dark cover active" aria-label="Portada">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor, de la Patagonia hacia el futuro" style="width:clamp(180px,20vw,280px)"></span><span class="pg">Sawicki Fintech Solutions</span></div>
+  <div class="body">
+    <div>
+      <div class="kicker">Propuesta de desarrollo web, septiembre 2026</div>
+      <h1>Todas las webs del grupo, desde un solo lugar.</h1>
+    </div>
+    <p class="lead">Sitios nuevos para cada unidad de negocio y una plataforma propia para que marketing los administre con autonomía.</p>
+    <div class="horizon" aria-label="Los ocho sitios del grupo">
+      <ol><li>VW Iruña</li><li>Chery DAO Sur</li><li>Oil Bull</li><li>Qi Drive</li><li>Hermes</li><li>Grupo Arvor</li><li>Foton Energy Trucks</li><li>Akira Repuestos</li></ol>
+    </div>
+  </div>
+  <div class="cover-foot"><span>Preparado para el equipo de marketing y la dirección</span><span>Los tres primeros, en la fase inicial</span></div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">2 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Punto de partida</div><h2>Ocho sitios, cada uno con su propia historia</h2></div>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr><th>Sitio</th><th>Situación actual</th><th>Urgencia</th><th>Acción</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Sitio">VW Iruña<span class="aud">Auditado</span></td><td data-label="Situación actual">Sitio de 2001 con proveedor externo, desactualizado</td><td data-label="Urgencia"><span class="pri u">Urgente</span></td><td data-label="Acción">Sitio nuevo con contenido actualizado</td></tr>
+        <tr><td data-label="Sitio">Chery DAO Sur<span class="aud">Auditado</span></td><td data-label="Situación actual">Problemas de seguridad, lento, difícil de editar</td><td data-label="Urgencia"><span class="pri u">Urgente</span></td><td data-label="Acción">Migrar y resolver seguridad</td></tr>
+        <tr><td data-label="Sitio">Oil Bull</td><td data-label="Situación actual">Sitio actual a dar de baja</td><td data-label="Urgencia"><span class="pri u">Urgente</span></td><td data-label="Acción">Landing nueva</td></tr>
+        <tr><td data-label="Sitio">Qi Drive</td><td data-label="Situación actual">Sin sitio propio</td><td data-label="Urgencia"><span class="pri m">Media-alta</span></td><td data-label="Acción">Landing nueva</td></tr>
+        <tr><td data-label="Sitio">Hermes</td><td data-label="Situación actual">Desarrollo a mitad de camino</td><td data-label="Urgencia"><span class="pri m">Media-alta</span></td><td data-label="Acción">Retomar y terminar</td></tr>
+        <tr><td data-label="Sitio">Grupo Arvor</td><td data-label="Situación actual">Lanzado, faltan detalles</td><td data-label="Urgencia"><span class="pri m">Media</span></td><td data-label="Acción">Ajustes y pulido</td></tr>
+        <tr><td data-label="Sitio">Foton Energy Trucks</td><td data-label="Situación actual">No existe, espera material de fábrica</td><td data-label="Urgencia"><span class="pri b">Baja</span></td><td data-label="Acción">Crear al recibir el material</td></tr>
+        <tr><td data-label="Sitio">Akira Repuestos</td><td data-label="Situación actual">No existe</td><td data-label="Urgencia"><span class="pri b">Baja</span></td><td data-label="Acción">Crear desde cero</td></tr>
+      </tbody></table></div>
+    <div class="legend"><p class="note"><span class="aud" style="margin-left:0">Auditado</span>&nbsp; La terminal revisa estos sitios: deben cumplir su manual de marca y sus textos legales. El resto de los sitios es reorganizar y armar.</p></div>
+    <p class="note">Los dominios ya pertenecen a Grupo Arvor y no forman parte del presupuesto.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">3 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Lo que pidió marketing</div><h2>Tres necesidades detrás del pedido</h2></div>
+    <div class="cols c3">
+      <div class="need"><span class="k">1</span><h3>Editar sin fricción</h3><p>Cambiar una promo, un precio o una foto sin esperar a un desarrollador o a un proveedor externo.</p></div>
+      <div class="need"><span class="k">2</span><h3>Ver el estado de todo</h3><p>Saber de un vistazo qué sitio está al día, qué se publicó, cuándo y quién lo hizo.</p></div>
+      <div class="need"><span class="k">3</span><h3>Un solo acceso</h3><p>Que cualquier persona del equipo, actual o futura, entre a un mismo lugar con su usuario y permisos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="slide dark statement">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">4 / 16</span></div>
+  <div class="body">
+    <div class="kicker">La propuesta</div>
+    <h1>No ocho webs sueltas. Una plataforma.</h1>
+    <p class="lead">Cada unidad de negocio tiene su sitio propio, moderno y rápido. Todos comparten una misma base y se administran desde Arvor Studio, un panel hecho a medida para el grupo.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">5 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Cómo funciona</div><h2>Un panel, una base de datos, todos los sitios</h2></div>
+    <div class="arch">
+      <div class="node studio"><h3>Arvor Studio</h3><p class="sub">El panel del equipo de marketing</p>
+        <ul><li>Editor visual por sitio</li><li>Estado de cada web</li><li>Usuarios y permisos</li><li>Consultas recibidas</li></ul></div>
+      <span class="link" aria-hidden="true"></span>
+      <div class="node"><h3>Base central</h3><p class="sub">Todo el contenido en un solo lugar</p>
+        <ul><li>Textos, imágenes y secciones</li><li>Historial de versiones</li><li>Formularios y consultas</li><li>Copias de seguridad</li></ul></div>
+      <span class="link" aria-hidden="true"></span>
+      <div class="node"><h3>Los sitios</h3><p class="sub">Cada uno con su dominio y su identidad</p>
+        <div class="chips"><span class="chip">VW Iruña</span><span class="chip">Chery DAO Sur</span><span class="chip">Oil Bull</span><span class="chip">Qi Drive</span><span class="chip">Hermes</span><span class="chip">Grupo Arvor</span><span class="chip" style="opacity:.6">Foton Energy Trucks, próximamente</span><span class="chip" style="opacity:.6">Akira Repuestos, próximamente</span></div></div>
+    </div>
+    <p class="note">Cuando marketing publica un cambio en el panel, el sitio se actualiza en segundos.</p>
+  </div>
+</section>
+
+<!-- tech -->
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">6 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Tecnología</div><h2 style="max-width:40ch;font-size:clamp(24px,2.8vw,40px)">La misma infraestructura que usan las marcas líderes del mundo</h2></div>
+    <div class="tech">
+      <div class="tcol">
+        <span class="role">Los sitios y el panel</span><h3>Next.js</h3>
+        <p>Uno de los frameworks web más usados del mundo, para sitios rápidos y bien posicionados en Google.</p>
+        <span class="who-uses">Lo usan</span>
+        <div class="brands"><span>Nike</span><span>Netflix</span><span>TikTok</span><span>Starbucks</span></div>
+      </div>
+      <div class="tcol">
+        <span class="role">Hosting</span><h3>Vercel</h3>
+        <p>La nube de los creadores de Next.js, con más de 100 puntos de distribución en el mundo.</p>
+        <span class="who-uses">Lo usan</span>
+        <div class="brands"><span>Walmart</span><span>Under Armour</span><span>PayPal</span><span>OpenAI</span></div>
+      </div>
+      <div class="tcol">
+        <span class="role">Base de datos</span><h3>Supabase</h3>
+        <p>Base de datos sobre PostgreSQL, con usuarios, permisos y copias de seguridad integrados.</p>
+        <span class="who-uses">Lo usan</span>
+        <div class="brands"><span>Mozilla</span><span>PwC</span><span>Johnson &amp; Johnson</span><span>1Password</span></div>
+      </div>
+    </div>
+    <div class="guarantee">
+      <div class="score" aria-hidden="true"><span>90+</span></div>
+      <div>
+        <h3>Velocidad garantizada en Google PageSpeed Insights</h3>
+        <p>Todas las webs de Grupo Arvor se entregan con 90 o más, la zona verde de Google, en rendimiento para celulares y computadoras. Ultrarrápidas en el celular, desde donde llega la mayoría de los clientes.</p>
+      </div>
+    </div>
+    <p class="note">Tecnologías abiertas y estándar del mercado: el grupo no queda atado a un proveedor ni a un sistema cerrado. La garantía se mide en cada sitio al momento de la entrega; herramientas externas que se agreguen después, como píxeles de publicidad o chats, pueden afectar el puntaje.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">7 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Qué gana el grupo</div><h2>Autonomía, sin riesgo de romper nada</h2></div>
+    <div class="cols c2">
+      <div class="item"><h3>Marketing edita, el diseño se mantiene</h3><p>Se cambian textos, fotos, links y el orden de las secciones. El diseño y la estructura no se pueden modificar desde el editor, así un cambio de contenido no desarma el sitio.</p></div>
+      <div class="item"><h3>Todas las consultas en una bandeja</h3><p>Hoy solo VW y Chery tienen un destino claro para sus consultas. Con la plataforma, los formularios de todos los sitios quedan registrados en un mismo lugar, con aviso inmediato; los de VW y Chery siguen llegando además a Salesforce.</p></div>
+      <div class="item"><h3>Sitios rápidos y seguros</h3><p>Tecnología actual, sin plugins ni parches. Buen rendimiento en celulares, que es desde donde llega la mayoría de las visitas.</p></div>
+      <div class="item"><h3>Historial y vuelta atrás</h3><p>Cada publicación queda guardada. Si algo se cambió por error, se vuelve a la versión anterior con un clic.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">8 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Plan de trabajo</div><h2>Cinco fases, empezando por lo urgente</h2></div>
+    <div class="track">
+      <div class="step s1"><div class="n">1</div><h3>Urgentes</h3><p>VW Iruña, Chery DAO Sur y Oil Bull, armados sobre una estructura común que después reutilizan todos los sitios.</p></div>
+      <div class="step s2"><div class="n">2</div><h3>Prioridad media</h3><p>Qi Drive, Hermes y ajustes del sitio corporativo.</p></div>
+      <div class="step s3"><div class="n">3</div><h3>Arvor Studio</h3><p>El panel: editor visual, estado de los sitios, usuarios y consultas.</p></div>
+      <div class="step s4"><div class="n">4</div><span class="opt">Opcional</span><h3>Asistente IA</h3><p>Cambios pedidos por chat, con vista previa y confirmación.</p></div>
+      <div class="step s5"><div class="n">5</div><span class="opt">A cotizar</span><h3>Foton y Akira</h3><p>Cuando haya material de fábrica y alcance definido.</p></div>
+    </div>
+    <div class="callout"><p>Mientras el panel está en desarrollo, marketing pide los cambios por WhatsApp y se aplican dentro de las 48 horas hábiles. Esos cambios están incluidos en el servicio mensual.</p></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">9 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Fase 1, urgentes</div><h2>Dos sitios auditados y una landing</h2></div>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr><th>Sitio</th><th>Alcance</th><th>Migración</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Sitio">Oil Bull</td><td data-label="Alcance">Landing de una página con formulario de contacto. Primera entrega visible de la fase</td><td data-label="Migración">Redirecciones y baja del sitio anterior</td></tr>
+        <tr><td data-label="Sitio">VW Iruña<span class="aud">Auditado</span></td><td data-label="Alcance">Sitio completo: inicio, páginas de 0 km por modelo, usados, posventa con solicitud de turno, promociones y contacto. Adaptado al manual de marca de Volkswagen, con textos legales en precios y financiación. Formularios conectados a Salesforce</td><td data-label="Migración">Contenido vigente migrado y direcciones viejas redirigidas para no perder posicionamiento</td></tr>
+        <tr><td data-label="Sitio">Chery DAO Sur<span class="aud">Auditado</span></td><td data-label="Alcance">Misma estructura, adaptada al manual de marca de Chery y sus requisitos legales. Formularios conectados a Salesforce</td><td data-label="Migración">Rescate del contenido actual, redirecciones y baja ordenada del proveedor</td></tr>
+      </tbody></table></div>
+    <div>
+      <h3 style="margin-bottom:8px">Recorrido de los sitios auditados</h3>
+      <div class="stage">
+        <div><span class="who">Grupo Arvor</span><h3>Lineamientos</h3><p>Manual de marca y requisitos web de cada terminal.</p></div>
+        <div><span class="who">Sawicki Fintech Solutions</span><h3>Desarrollo</h3><p>Sitio adaptado a esos lineamientos.</p></div>
+        <div class="ext"><span class="who">Terminal</span><h3>Revisión</h3><p>Aprobación y hasta dos rondas de correcciones incluidas. Sus plazos no dependen de nosotros.</p></div>
+        <div><span class="who">Todos</span><h3>Publicación</h3><p>En su dominio, con el contenido cargado.</p></div>
+      </div>
+    </div>
+    <p class="note">El precio contempla páginas por modelo. Un catálogo administrable de vehículos con stock y precios se cotiza aparte. Grupo Arvor aporta textos, fotos y material de cada marca; nosotros lo cargamos.</p>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">10 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Fase 3, Arvor Studio</div><h2>Lo que va a poder hacer el equipo</h2></div>
+    <div class="cols c2">
+      <ul class="checks">
+        <li>Entrar con su usuario y ver solo los sitios que le corresponden</li>
+        <li>Editar textos, imágenes y links viendo el resultado en vivo</li>
+        <li>Agregar, quitar y reordenar secciones desde una librería</li>
+        <li>Guardar borradores y publicar cuando esté listo</li>
+      </ul>
+      <ul class="checks">
+        <li>Ver el estado de cada sitio: última publicación y quién editó</li>
+        <li>Volver a cualquier versión anterior</li>
+        <li>Revisar, filtrar y exportar las consultas recibidas</li>
+        <li>Sumar personas al equipo sin pedir accesos a terceros</li>
+      </ul>
+    </div>
+    <div class="brandmode">
+      <div><h3>Modo marca para VW y Chery</h3><p>En los sitios auditados, lo que exige la terminal queda bloqueado. Marketing edita solo lo permitido, y los elementos que controla la auditoría no se pueden alterar desde el panel.</p></div>
+      <ul class="locks">
+        <li><b>Bloqueado</b>Logos, tipografías y colores oficiales</li>
+        <li><b>Bloqueado</b>Textos legales de precios y financiación</li>
+        <li><b>Editable</b>Promociones, fotos y novedades del concesionario</li>
+        <li><b>Con revisión</b>Cambios que un responsable del equipo aprueba antes de publicarse</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="slide dark statement">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">11 / 16</span></div>
+  <div class="body">
+    <div class="kicker">Fase 4, opcional</div>
+    <p class="quote">“Cambiá la promo de septiembre por la de octubre en VW y Chery.”</p>
+    <p class="lead">Un asistente dentro del panel que entiende pedidos escritos como este, muestra exactamente qué va a cambiar y espera la confirmación. Solo toca el contenido, nunca el diseño. Se cotiza aparte, incluido el consumo del servicio de IA.</p>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">12 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Desde la publicación de la fase 1</div><h2>Un servicio mensual que sostiene todo</h2></div>
+    <div class="cols c2">
+      <div><h3>Qué incluye</h3><ul class="checks">
+        <li>Hosting de todos los sitios y del panel</li>
+        <li>Monitoreo, copias de seguridad y actualizaciones</li>
+        <li>Soporte al equipo y hasta 10 horas de cambios por mes</li>
+        <li>Licencia de uso de Arvor Studio</li></ul></div>
+      <div><h3>De quién es cada cosa</h3><ul class="checks">
+        <li>Los sitios, el contenido y las consultas son de Grupo Arvor</li>
+        <li>Los dominios siguen a nombre del grupo</li>
+        <li>Arvor Studio se licencia mientras el servicio esté vigente</li>
+        <li>Valor en dólares, pagadero en pesos y facturado a mes vencido</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- valor -->
+<section class="slide dark">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">13 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Lo que realmente se invierte</div>
+    <h2 style="color:#fff;max-width:36ch;font-size:clamp(24px,3vw,42px)">No es una inversión en páginas web. Es una infraestructura propia para el equipo de marketing.</h2></div>
+    <p class="lead" style="max-width:70ch;font-size:clamp(16px,1.45vw,20px)">Sitios modernos y rápidos, sí. Pero sobre todo, una solución todo en uno para que el equipo de marketing del grupo gestione cada marca por su cuenta, sin abrir tickets ni esperar respuestas de proveedores externos para cada cambio.</p>
+    <div class="vs">
+      <div class="before"><h3>Hoy</h3><ul>
+        <li>Un proveedor distinto por sitio, cada uno con sus tiempos</li>
+        <li>Cambiar una promo implica pedirla y esperar</li>
+        <li>Sitios desactualizados, lentos o con problemas de seguridad</li>
+        <li>Consultas que nadie sabe a dónde llegan</li>
+        <li>Accesos y conocimiento repartidos entre terceros</li>
+      </ul></div>
+      <div class="after"><h3>Con Arvor Studio</h3><ul>
+        <li>Un solo lugar para todas las marcas del grupo</li>
+        <li>El equipo publica la promo en minutos, cuando lo decide</li>
+        <li>Sitios modernos, seguros y con velocidad garantizada</li>
+        <li>Todas las consultas registradas y con aviso inmediato</li>
+        <li>Accesos y contenido en manos del grupo</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">14 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Para pensar antes de decidir</div><h2>¿Cuánto le cuesta hoy al grupo no tener esto?</h2></div>
+    <div class="qs">
+      <div class="q"><span class="ask">¿Cuántas consultas se perdieron este año en sitios que no saben a dónde envían sus formularios?</span><p>Cada consulta es un posible cliente de un 0 km, un servicio o un repuesto.</p></div>
+      <div class="q"><span class="ask">¿Cuánto tarda hoy en salir publicada una promoción?</span><p>Si la campaña arranca el lunes y el sitio se actualiza el jueves, se pierden días de ventas.</p></div>
+      <div class="q"><span class="ask">¿Qué pasa si el proveedor de un sitio deja de responder?</span><p>Hoy la continuidad de cada web depende de un tercero. Con la plataforma, el contenido y los accesos son del grupo.</p></div>
+      <div class="q"><span class="ask">¿A dónde llega la pauta publicitaria?</span><p>Invertir en anuncios que llevan a un sitio lento o desactualizado es pagar para que el cliente se vaya.</p></div>
+    </div>
+    <p class="note">Una web es la vidriera que atiende las 24 horas. Este proyecto la convierte en una herramienta que el equipo controla.</p>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">15 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Inversión</div><h2>Se aprueba por fase, con un 25% para empezar</h2></div>
+    <div class="cols c4">
+      <div class="price main"><span class="lbl">Fase 1</span><span class="amt">USD 6.500</span><p>VW Iruña y Chery DAO Sur (auditados), Oil Bull y la estructura común sobre la que se construyen todos los sitios</p><p class="ars">≈ $9.945.000</p></div>
+      <div class="price"><span class="lbl">Fase 2</span><span class="amt">USD 3.000</span><p>Landing de Qi Drive, Hermes terminado sobre la estructura común y ajustes del corporativo</p><p class="ars">≈ $4.590.000</p></div>
+      <div class="price"><span class="lbl">Fase 3</span><span class="amt">USD 5.000</span><p>Arvor Studio, versión 1, con modo marca para los sitios auditados</p><p class="ars">≈ $7.650.000</p></div>
+      <div class="price"><span class="lbl">Mensual</span><span class="amt">USD 460</span><p>Hosting, mantenimiento, soporte y licencia de Arvor Studio</p><p class="ars">≈ $704.000 por mes, unos USD 15 por día para todas las webs</p></div>
+    </div>
+    <div class="pay">
+      <div class="seg s30"><span class="pct">25%</span><div><h3>Al aprobar la fase</h3><p>Fase 1: USD 1.625, fase 2: USD 750, fase 3: USD 1.250</p></div></div>
+      <div class="seg s70"><span class="pct">75%</span><div><h3>Con la entrega 100% funcional</h3><p>Fase 1: USD 4.875, fase 2: USD 2.250, fase 3: USD 3.750</p></div></div>
+    </div>
+    <p class="note">Valores en dólares, pagaderos en pesos al dólar oficial vendedor del Banco Nación del día de pago; referencia en pesos a $1.530. Funcional significa publicado en su dominio, con contenido cargado y formularios operativos; la aprobación de la terminal en los sitios auditados no depende de nosotros. El asistente IA y los sitios de Foton y Akira se cotizan aparte. Propuesta válida por 15 días.</p>
+  </div>
+</section>
+
+<!-- 13 -->
+<section class="slide dark">
+  <div class="bar"><span class="logo" role="img" aria-label="Grupo Arvor"></span><span class="pg">16 / 16</span></div>
+  <div class="body">
+    <div><div class="kicker">Próximos pasos</div><h2 style="color:#fff">Para arrancar la fase 1</h2></div>
+    <ol class="steps-list">
+      <li>Compartir los manuales de marca y lineamientos web de VW y Chery para concesionarios</li>
+      <li>Confirmar si la terminal permite un sitio propio y si debe aprobarlo antes de publicarlo</li>
+      <li>Definir si VW y Chery necesitan catálogo de vehículos administrable o páginas por modelo</li>
+      <li>Acceso a Salesforce, o los datos de integración de formularios, para VW y Chery</li>
+      <li>Reunir textos, fotos y material de cada marca</li>
+      <li>Compartir accesos a los proveedores actuales y a la gestión de dominios</li>
+      <li>Aprobar la fase 1 y fijar la fecha de inicio</li>
+    </ol>
+  </div>
+  <div class="cover-foot"><span>Sawicki Fintech Solutions</span><span>mau.sawicki@gmail.com</span></div>
+</section>
+
+<nav class="nav" id="nav" aria-label="Navegación">
+  <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+  <div class="btns">
+    <button class="btn" id="prev" aria-label="Diapositiva anterior">←</button>
+    <button class="btn" id="next" aria-label="Diapositiva siguiente">→</button>
+  </div>
+</nav>
+
+<script>
+(function(){
+  var root=document.documentElement;if(!root.classList.contains('locked'))return;
+  var box=document.getElementById('pin'),I=[].slice.call(box.querySelectorAll('input')),msg=document.getElementById('gate-msg');
+  function h(s){var x=0;for(var k=0;k<s.length;k++)x=(x*31+s.charCodeAt(k))|0;return x}
+  function check(){
+    var v=I.map(function(el){return el.value}).join('');if(v.length<4)return;
+    if(h('arvor:'+v)===767419952){
+      try{sessionStorage.setItem('arvor-ok','1')}catch(e){}
+      root.classList.remove('locked');document.activeElement.blur();
+    }else{
+      msg.textContent='PIN incorrecto';box.classList.remove('err');void box.offsetWidth;box.classList.add('err');
+      I.forEach(function(el){el.value=''});I[0].focus();
+    }
+  }
+  I.forEach(function(el,j){
+    el.addEventListener('input',function(){
+      var d=el.value.replace(/\D/g,'');
+      if(d.length>1){for(var k=0;k<d.length&&j+k<4;k++)I[j+k].value=d[k];el=I[Math.min(3,j+d.length-1)]}else el.value=d;
+      msg.textContent='';
+      if(el.value&&j<3&&d.length===1)I[j+1].focus();
+      check();
+    });
+    el.addEventListener('keydown',function(e){
+      e.stopPropagation();
+      if(e.key==='Backspace'&&!el.value&&j>0){I[j-1].value='';I[j-1].focus();e.preventDefault()}
+      else if(e.key==='ArrowLeft'&&j>0)I[j-1].focus();else if(e.key==='ArrowRight'&&j<3)I[j+1].focus();
+    });
+  });
+  document.getElementById('gate-form').addEventListener('submit',function(e){e.preventDefault();check()});
+  I[0].focus();
+})();
+</script>
+<script>
+(function(){
+  var S=[].slice.call(document.querySelectorAll('.slide')),i=0,n=S.length;
+  var nav=document.getElementById('nav'),bar=document.getElementById('bar'),pv=document.getElementById('prev'),nx=document.getElementById('next');
+  try{var s=parseInt(localStorage.getItem('arvor-deck'),10);if(s>=0&&s<n)i=s;}catch(e){}
+  function go(k){
+    i=Math.max(0,Math.min(n-1,k));
+    S.forEach(function(el,j){el.classList.toggle('active',j===i);if(j===i)el.scrollTop=0;});
+    nav.classList.toggle('on-dark',S[i].classList.contains('dark'));
+    bar.style.width=((i+1)/n*100)+'%';pv.disabled=i===0;nx.disabled=i===n-1;
+    try{localStorage.setItem('arvor-deck',String(i));}catch(e){}
+  }
+  pv.onclick=function(){go(i-1)};nx.onclick=function(){go(i+1)};
+  document.addEventListener('keydown',function(e){
+    if(document.documentElement.classList.contains('locked'))return;
+    if(['ArrowRight','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();go(i+1);}
+    else if(['ArrowLeft','PageUp'].indexOf(e.key)>-1){e.preventDefault();go(i-1);}
+    else if(e.key==='Home')go(0);else if(e.key==='End')go(n-1);
+  });
+  var x=null;
+  var y=null;
+  document.addEventListener('touchstart',function(e){x=e.touches[0].clientX;y=e.touches[0].clientY},{passive:true});
+  document.addEventListener('touchend',function(e){if(x===null||document.documentElement.classList.contains('locked'))return;var d=e.changedTouches[0].clientX-x,dy=e.changedTouches[0].clientY-y;if(Math.abs(d)>60&&Math.abs(d)>Math.abs(dy)*1.5)go(d<0?i+1:i-1);x=null;});
+  go(i);
+})();
+</script>
+</body>
+</html>
